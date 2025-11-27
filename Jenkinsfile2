@@ -51,7 +51,7 @@ pipeline {
                  sh """
                    docker run -d \
                    --name webapp-container \
-                   -p 9092:8080 \
+                   -p 9093:8080 \
                    ${REGISTRY}/${IMAGE_NAME}:${env.BUILD_NUMBER}
                    """
             }
