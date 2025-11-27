@@ -6,7 +6,7 @@
             
                     
                    
-                    SONAR_TOKEN = credentials('sonar-new-cred')
+                   // SONAR_TOKEN = credentials('sonar-new-cred')
                     REGISTRY = 'docker.io/muhammadfasil'
                     IMAGE_NAME = 'webapp-demo'
                     
@@ -28,17 +28,17 @@
                 }
             }
             
-             stage('sonar') {
-                 steps {
+ //             stage('sonar') {
+ //                 steps {
                      
                     
-                      withSonarQubeEnv('sonar-server') {
-                      sh '''mvn clean verify sonar:sonar -Dsonar.projectKey=webapp-demo -Dsonar.projectName='webapp-demo' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=${SONAR_TOKEN} 
- '''
-                                  }
-              }
+ //                      withSonarQubeEnv('sonar-server') {
+ //                      sh '''mvn clean verify sonar:sonar -Dsonar.projectKey=webapp-demo -Dsonar.projectName='webapp-demo' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=${SONAR_TOKEN} 
+ // '''
+ //                                  }
+ //              }
                 
-            }
+ //            }
              stage('docker  build') {
                 steps {
                    
