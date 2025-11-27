@@ -23,7 +23,7 @@
             stage('maven build') {
                 steps {
                     
-                        sh 'mvn clean package -DskipTests'
+                        sh 'mvn package -DskipTests'
                     
                 }
             }
