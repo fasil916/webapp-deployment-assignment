@@ -4,7 +4,7 @@ metadata:
   namespace: webapp
   name: webapp-service
 spec:
-  type: NodePort
+  type: Loadbalancer
   ports:
   - name: http
     port: 80
