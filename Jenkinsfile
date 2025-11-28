@@ -55,7 +55,7 @@
                 steps {
                    
                          script {
-                       docker.withRegistry('', "docker-credd") {
+                       docker.withRegistry('', "docker-cred") {
                     docker.image("${REGISTRY}/${IMAGE_NAME}:${env.BUILD_NUMBER}").push()
                        }
                          
