@@ -85,7 +85,7 @@
                          script {
                              
                              sh "echo kuben starting ................"
-                         withKubeConfig(caCertificate: '', clusterName: 'my-aks-cluster', contextName: 'my-aks-cluster', credentialsId: 'k8s-cred', namespace: 'webapp', restrictKubeConfigAccess: false, serverUrl: 'https://my-aks-cluster-s3hx60oy.hcp.centralindia.azmk8s.io:443') {
+                         withKubeConfig(caCertificate: '', clusterName: 'my-aks-cluster', contextName: 'my-aks-cluster', credentialsId: 'kube-cred', namespace: 'webapp', restrictKubeConfigAccess: false, serverUrl: 'https://my-aks-cluster-6x28scgv.hcp.centralindia.azmk8s.io:443') {
     
 
                       
