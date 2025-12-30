@@ -8,13 +8,12 @@ pool:
 
 steps:
 - task: Maven@3
-  displayName: 'Maven Build with Java 17'
+  displayName: 'Maven Build (Java 17)'
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.17'     # ✅ FIXED
-    jdkArchitectureOption: 'x64'
+    javaHomeOption: 'Path'               # Use path instead of JDKVersion
+    jdkDirectory: '/usr/lib/jvm/java-17-openjdk-amd64'  # Path to your JDK 17
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean package'
