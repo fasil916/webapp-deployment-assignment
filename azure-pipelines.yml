@@ -7,13 +7,10 @@ pool:
     - Agent.Name -equals shanu
 
 steps:
-- task: Maven@3
-  displayName: 'Maven Build (Java 17)'
+- task: CmdLine@2
   inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'Path'               # Use path instead of JDKVersion
-    jdkDirectory: '/usr/lib/jvm/java-17-openjdk-amd64'  # Path to your JDK 17
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'clean package'
+    script: |
+      echo Write your commands here
+      
+      echo Hello world
+      whoami
