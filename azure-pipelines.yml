@@ -7,10 +7,14 @@ pool:
     - Agent.Name -equals shanu
 
 steps:
-- task: CmdLine@2
+- task: Maven@4
   inputs:
-    script: |
-      echo Write your commands here
-      
-      echo Hello world
-      whoami
+    azureSubscription: 'Free Trial (7f5ef2b9-b991-442f-80cb-51fc34b43bad)'
+    mavenPomFile: 'pom.xml'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
