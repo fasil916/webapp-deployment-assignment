@@ -9,20 +9,20 @@ pool:
 steps:
 - task: Maven@4
   inputs:
-    azureSubscription: 'Free Trial (7f5ef2b9-b991-442f-80cb-51fc34b43bad)'
     mavenPomFile: 'pom.xml'
     options: '-DskipTests'
     publishJUnitResults: false
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
     sonarQubeRunAnalysis: false
+
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(agent.builddirectory)/target'
+    SourceFolder: '$(System.DefaultWorkingDirectory)/target'
     Contents: '*.jar'
-    TargetFolder: '$(build.artifactstagingdirectory)'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    flattenFolders: true
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
