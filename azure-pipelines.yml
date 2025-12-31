@@ -12,8 +12,7 @@ steps:
     azureSubscription: 'Free Trial (7f5ef2b9-b991-442f-80cb-51fc34b43bad)'
     mavenPomFile: 'pom.xml'
     options: '-DskipTests'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    publishJUnitResults: false
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
