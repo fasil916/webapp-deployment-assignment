@@ -28,3 +28,10 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docker-connection'
+    repository: 'muhammadfasil/azure-devops-repo'
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
